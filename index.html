@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>EduConnect | Microlearning Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="login" class="login-wrapper">
+  <div class="login-card">
+    <h1>EduConnect</h1>
+    <p>Platform Pembelajaran Digital Berbasis Microlearning</p>
+    <input id="username" type="text" placeholder="Nama pengguna">
+    <button onclick="login()">Masuk</button>
+  </div>
+</section>
+
+<!-- APP -->
+<section id="app" class="app" style="display:none">
+
+<aside class="sidebar">
+  <h2>EduConnect</h2>
+  <button onclick="openPage('home')">Beranda</button>
+  <button onclick="openPage('materi')">Microlearning</button>
+  <button onclick="openPage('diskusi')">Diskusi</button>
+  <button onclick="openPage('proyek')">Proyek</button>
+  <button onclick="openPage('progres')">Progres</button>
+  <button class="logout" onclick="logout()">Keluar</button>
+</aside>
+
+<main class="content">
+
+<section id="home" class="page active">
+  <h1>Selamat Datang</h1>
+  <p>
+    EduConnect adalah platform pembelajaran digital berbasis web yang dirancang
+    untuk mendukung pembelajaran microlearning secara mandiri, terstruktur, dan
+    kolaboratif.
+  </p>
+  <p>
+    Platform ini memfasilitasi pembelajaran melalui video singkat, diskusi reflektif,
+    serta proyek berbasis pemecahan masalah guna meningkatkan keterlibatan dan
+    pemahaman konseptual mahasiswa.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Microlearning</h3>
+      <p>Penyajian materi dalam unit kecil yang fokus dan mudah dipahami.</p>
+    </div>
+    <div class="card">
+      <h3>Kolaboratif</h3>
+      <p>Diskusi dirancang untuk membangun pemahaman melalui interaksi.</p>
+    </div>
+    <div class="card">
+      <h3>Berbasis Proyek</h3>
+      <p>Mahasiswa menerapkan konsep melalui proyek pembelajaran.</p>
+    </div>
+  </div>
+</section>
+
+<section id="materi" class="page">
+  <h1>Pembelajaran Microlearning</h1>
+
+  <iframe
+    src="https://www.youtube.com/embed/d461QGt0p1A"
+    allowfullscreen></iframe>
+
+  <div class="card">
+    <h3>Konsep Microlearning</h3>
+    <p>
+      Microlearning merupakan pendekatan pembelajaran yang menyajikan materi
+      dalam unit-unit kecil, terfokus, dan dapat diselesaikan dalam waktu singkat.
+    </p>
+    <ul>
+      <li>Fokus pada satu tujuan pembelajaran</li>
+      <li>Durasi belajar singkat</li>
+      <li>Mendukung fleksibilitas dan pembelajaran mandiri</li>
+    </ul>
+  </div>
+
+  <button class="primary" onclick="finishVideo()">Tandai Materi Selesai</button>
+</section>
+
+<section id="diskusi" class="page">
+  <h1>Diskusi Pembelajaran</h1>
+
+  <div class="card">
+    <p>
+      Bagaimana relevansi microlearning dalam pembelajaran digital di Indonesia?
+      Jelaskan kelebihan dan tantangan penerapannya di pendidikan formal.
+    </p>
+
+    <textarea id="diskusiText" placeholder="Tuliskan pendapat Anda"></textarea>
+    <button class="primary" onclick="sendDiscussion()">Kirim Diskusi</button>
+  </div>
+
+  <ul id="diskusiList" class="discussion-list"></ul>
+</section>
+
+<section id="proyek" class="page">
+  <h1>Proyek Pembelajaran</h1>
+
+  <div class="card">
+    <h3>Instruksi Proyek</h3>
+    <ol>
+      <li>Tentukan satu topik atau mata pelajaran</li>
+      <li>Rumuskan tujuan pembelajaran</li>
+      <li>Rancang minimal tiga unit microlearning</li>
+      <li>Jelaskan media dan alasan pemilihannya</li>
+    </ol>
+    <p>
+      Proyek ini bertujuan melatih kemampuan analisis, perancangan pembelajaran,
+      dan penerapan konsep microlearning.
+    </p>
+
+    <input type="file" onchange="finishProject()">
+  </div>
+</section>
+
+<section id="progres" class="page">
+  <h1>Progres Belajar</h1>
+
+  <div class="card">
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+
+    <table>
+      <tr><td>Microlearning</td><td id="vStatus">Belum</td></tr>
+      <tr><td>Diskusi</td><td id="dStatus">Belum</td></tr>
+      <tr><td>Proyek</td><td id="pStatus">Belum</td></tr>
+    </table>
+
+    <p class="score">Skor Keterlibatan: <span id="score">0</span></p>
+  </div>
+</section>
+
+</main>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+
